@@ -16,7 +16,7 @@ def scrapeGoogle(query):
     url="https://www.google.co.in/search?q="+query+"&source=lnms&tbm=isch"
     print url
     #add the directory for your image here
-    DIR = "images" + query.split('+')[0]+"\\"
+    DIR = "images\\" + query.split('+')[0]+"\\"
     header={'User-Agent':"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"
     }
     soup = get_soup(url,header)
@@ -40,9 +40,9 @@ def scrapeGoogle(query):
             cntr = len([i for i in os.listdir(DIR) if image_type in i]) + 1
             print "..."
             if len(Type)==0:
-                f = open(DIR + image_type + "_"+ str(cntr)+".jpg", 'wb')
+                f = open(DIR + "_" + i + str(cntr) + ".jpg", 'wb')
             else :
-                f = open(DIR + image_type + "_"+ str(cntr)+"."+Type, 'wb')
+                f = open(DIR + "_" + i + str(cntr) + "."+Type, 'wb')
 
             f.write(raw_img)
             f.close()

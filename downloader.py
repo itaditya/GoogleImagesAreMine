@@ -40,9 +40,9 @@ def scrapeGoogle(query):
             cntr = len([i for i in os.listdir(DIR) if image_type in i]) + 1
             print "..."
             if len(Type)==0:
-                f = open(DIR + "_" + i + str(cntr) + ".jpg", 'wb')
+                f = open(DIR + "_" + str(i) + str(cntr) + ".jpg", 'wb')
             else :
-                f = open(DIR + "_" + i + str(cntr) + "."+Type, 'wb')
+                f = open(DIR + "_" + str(i) + str(cntr) + "."+Type, 'wb')
 
             f.write(raw_img)
             f.close()
